@@ -1,0 +1,33 @@
+
+I first decoded the morsecode mp4 video:
+This is the Secret Key: S3CR3TK3Y@123456
+Algorithm used: AES encryption algorithm
+I used the AES encryption algorithm to decrypt the Base64-encoded cipher text and find the password for the PDF file
+
+AES (Advanced Encryption Standard):
+•	AES is a symmetric encryption algorithm, meaning the same key is used for both encryption and decryption.
+•	It works in different key sizes: 128-bit (16 bytes), 192-bit (24 bytes), and 256-bit (32 bytes). I used AES-128 because the secret key you provided is 16 characters (16 bytes).
+Base64-encoded Cipher Text:
+•	The input cipher_text = "hoZyGgMHU4dM+8zgZAPXhA==" is Base64-encoded data, which is a text representation of binary data.
+•	Base64 decoding: base64.b64decode(cipher_text) converts this back into the raw encrypted data in bytes.
+Secret Key:
+•	AES requires a key of specific lengths, and the secret key S3CR3TK3Y@123456, which is 16 bytes long, suitable for AES-128 encryption.
+•	This key is essential for both encryption and decryption.
+AES Encryption Mode (ECB):
+•	The AES.new(secret_key.encode('utf-8'), AES.MODE_ECB) initializes the AES cipher in ECB mode.
+•	ECB stands for Electronic Codebook mode, one of the simplest encryption modes in AES where each block of data is encrypted independently.
+Decrypting the Cipher Text:
+•	The cipher.decrypt(encrypted_data) command decrypts the encoded data using the secret key provided.
+•	The result is the decrypted data (in bytes), which could contain padding added during encryption.
+Removing Padding:
+•	AES encryption often adds padding to make the input data a multiple of the block size (16 bytes in the case of AES-128).
+•	I used decrypted_data.decode('utf-8').rstrip("\0") to remove any trailing null characters (\0), which are sometimes added as padding.
+Final Decrypted Password:
+•	The decrypted data, after removing the padding, is a string, which in this case is the password for the PDF.
+
+
+The password is: algorithmissafe
+
+The Secret code present in the Cyber Threat Advanced Machine Learning Algorithm PDF: CogML24@2024
+
+
